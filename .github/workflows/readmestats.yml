@@ -19,7 +19,12 @@ jobs:
         uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
         with:
           card: stats
-          options: username=Daraan&show_icons=true&hide_rank=false
+          options: |
+              username=Daraan
+              &show_icons=true
+              &hide_rank=false
+              &show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage
+              &rank_icon=percentile
           path: profile/stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -27,8 +32,27 @@ jobs:
         uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
         with:
           card: top-langs
-          options: username=Daraan&layout=compact&langs_count=6
+          options: username=Daraan&layout=donut&langs_count=7&size_weight=0.25&count_weight=0.75
           path: profile/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Generate WakaTime
+        uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
+        with:
+          card: wakatime
+          options: username=Daraan&layout=compact
+          path: profile/waka-time.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Generate Gist (time to next weekday)
+        uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
+        with:
+          card: gist
+          options: username=Daraan&id=61c45e7c0780930c588d80b85380a931
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Generate Gist Stats (Daterange)
+        uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
+        with:
+          card: gist
+          options: username=Daraan&id=5fab91ad430556161cf9a4a3ec8d40cb  
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit cards
