@@ -17,8 +17,8 @@ Here are some ideas to get you started:
 
 ![Stats](./profile/stats.svg)
 ![Top Languages](./profile/top-langs.svg)
-![Gist](./profile/gist.svg)
-![WakaTime](./profile/waka-time.svg)
+![Gist Daterange](./profile/gist_daterange.svg)
+![Gist Time to next Weekday](./profile/gist_time_to_next_weekday.svg)
 
 <div align="center">
   <img height="150" src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif"  />
