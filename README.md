@@ -17,7 +17,8 @@ Here are some ideas to get you started:
 
 ![Stats](./profile/stats.svg)
 ![Top Languages](./profile/top-langs.svg)
-![Pinned](./profile/pin-readme-tools-github-readme-stats.svg)
+![Gist](./profile/gist.svg)
+![WakaTime](./profile/waka-time.svg)
 
 <div align="center">
   <img height="150" src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif"  />
