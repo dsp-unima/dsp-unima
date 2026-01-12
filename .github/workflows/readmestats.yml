@@ -19,12 +19,12 @@ jobs:
         uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
         with:
           card: stats
-          options: |
-              username=Daraan
+          options:
               &show_icons=true
               &hide_rank=false
               &show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage
               &rank_icon=percentile
+              username=Daraan
           path: profile/stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -36,6 +36,7 @@ jobs:
           path: profile/top-langs.svg
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Generate WakaTime
+        if: false
         uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
         with:
           card: wakatime
