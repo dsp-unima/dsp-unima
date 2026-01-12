@@ -46,12 +46,14 @@ jobs:
         uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
         with:
           card: gist
+          path: profile/gist_time_to_next_weekday.svg
           options: username=Daraan&id=61c45e7c0780930c588d80b85380a931
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Generate Gist Stats (Daterange)
         uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
         with:
           card: gist
+          path: profile/gist_daterange.svg
           options: username=Daraan&id=5fab91ad430556161cf9a4a3ec8d40cb  
           token: ${{ secrets.GITHUB_TOKEN }}
 
