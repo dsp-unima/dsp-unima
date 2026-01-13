@@ -26,17 +26,18 @@ jobs:
       matrix:
         include:
           - theme: light
-            themeParam: '&theme=gruvbox_light'
+            themeParam: '&theme=omni'
           - theme: dark
             themeParam: '&theme=github_dark'
           - theme: none
-            themeParam: '&theme=transparent'      # no theme param for 'none'
+            themeParam: '&theme=transparent'      # good for dark and light
 
     steps:
       - uses: actions/checkout@v6
 
       - name: Generate stats card
         uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
+        continue-on-error: true
         with:
           card: stats
           options: username=Daraan&show_icons=true&hide_rank=false&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&rank_icon=percentile${{ matrix.themeParam }}
@@ -45,6 +46,7 @@ jobs:
 
       - name: Generate top languages card
         uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
+        continue-on-error: true
         with:
           card: top-langs
           options: username=Daraan&layout=donut&exclude_repo=Daraan&langs_count=6&size_weight=0.00&count_weight=1.00${{ matrix.themeParam }}
@@ -53,6 +55,7 @@ jobs:
 
       - name: Generate Gist (time to next weekday)
         uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
+        continue-on-error: true
         with:
           card: gist
           path: profile/gist_time_to_next_weekday-${{ matrix.theme }}.svg
@@ -61,16 +64,49 @@ jobs:
 
       - name: Generate Gist Stats (Daterange)
         uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
+        continue-on-error: true
         with:
           card: gist
           path: profile/gist_daterange-${{ matrix.theme }}.svg
           options: username=Daraan&id=5fab91ad430556161cf9a4a3ec8d40cb${{ matrix.themeParam }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Upload generated svgs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: profile-${{ matrix.theme }}
+          path: profile/*-${{ matrix.theme }}.svg
+
+  commit:
+    needs: build
+    if: always()                # run even if some matrix runs failed
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout target branch
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Download all generated artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: profile
+
+      - name: Show downloaded files
+        run: ls -la profile || true
+
       - name: Commit cards
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add profile/*.svg
-          git commit -m "Update README cards (theme: ${{ matrix.theme }})" || exit 0
+          # ensure we are up-to-date with remote to reduce chance of conflicts
+          git fetch origin main
+          git reset --hard origin/main || true
+          git add profile/*.svg || true
+          git commit -m "Update README cards (generated)" || echo "No changes to commit"
           git push
