@@ -15,6 +15,33 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
+
+<picture>
+  <source
+    srcset="./profile/stats.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="./profile/stats.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="./profile/stats.svg" />
+</picture>
+
+<picture>
+  <source
+    srcset="./profile/top-langs.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="./profile/top-langs.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="./profile/top-langs.svg" />
+</picture>
+
+
+
 ![Stats](./profile/stats.svg)
 ![Top Languages](./profile/top-langs.svg)
 ![Gist Daterange](./profile/gist_daterange.svg)
@@ -24,7 +51,20 @@ Here are some ideas to get you started:
   <img height="150" src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif"  />
 </div>
 
+
+---
+
+<a href="https://github.com/anuraghazra/github-readme-stats">
+  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=anuraghazra" />
+</a>
+<a href="https://github.com/anuraghazra/convoychat">
+  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=anuraghazra&layout=compact&langs_count=8&card_width=320" />
+</a>
+
+
 ###
+
+
 
 <div align="center">
   <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"  />
