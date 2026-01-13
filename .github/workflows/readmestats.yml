@@ -22,7 +22,6 @@ jobs:
 
     strategy:
       fail-fast: false
-      max-parallel: 1            # run themes sequentially to avoid concurrent pushes
       matrix:
         include:
           - theme: light
