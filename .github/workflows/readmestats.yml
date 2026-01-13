@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "0 0 * * *" # Runs once daily at midnight
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.md'
+      - '.github/workflows/readmestats.yml'
 
 jobs:
   build:
