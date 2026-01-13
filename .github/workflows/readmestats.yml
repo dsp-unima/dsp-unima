@@ -24,11 +24,11 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - theme: light
+          - theme: "-light"
             themeParam: '&theme=default'
-          - theme: dark
+          - theme: "-dark"
             themeParam: '&theme=github_dark'
-          - theme: none
+          - theme: ''
             themeParam: '&theme=transparent'      # good for dark and light
 
     steps:
@@ -40,7 +40,7 @@ jobs:
         with:
           card: stats
           options: username=Daraan&show_icons=true&hide_rank=false&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&rank_icon=percentile${{ matrix.themeParam }}
-          path: profile/stats-${{ matrix.theme }}.svg
+          path: profile/stats${{ matrix.theme }}.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate top languages card
@@ -49,7 +49,7 @@ jobs:
         with:
           card: top-langs
           options: username=Daraan&layout=donut&exclude_repo=Daraan&langs_count=6&size_weight=0.00&count_weight=1.00${{ matrix.themeParam }}
-          path: profile/top-langs-${{ matrix.theme }}.svg
+          path: profile/top-langs${{ matrix.theme }}.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate Gist (time to next weekday)
@@ -57,7 +57,7 @@ jobs:
         continue-on-error: true
         with:
           card: gist
-          path: profile/gist_time_to_next_weekday-${{ matrix.theme }}.svg
+          path: profile/gist_time_to_next_weekday${{ matrix.theme }}.svg
           options: username=Daraan&id=61c45e7c0780930c588d80b85380a931${{ matrix.themeParam }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -66,7 +66,7 @@ jobs:
         continue-on-error: true
         with:
           card: gist
-          path: profile/gist_daterange-${{ matrix.theme }}.svg
+          path: profile/gist_daterange${{ matrix.theme }}.svg
           options: username=Daraan&id=5fab91ad430556161cf9a4a3ec8d40cb${{ matrix.themeParam }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -74,8 +74,8 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: profile-${{ matrix.theme }}
-          path: profile/*-${{ matrix.theme }}.svg
+          name: profile${{ matrix.theme }}
+          path: profile/*${{ matrix.theme }}.svg
 
   commit:
     needs: build
