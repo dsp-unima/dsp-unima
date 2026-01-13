@@ -27,7 +27,7 @@ jobs:
         uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
         with:
           card: top-langs
-          options: username=Daraan&layout=donut&langs_count=7&size_weight=0.25&count_weight=0.75
+          options: username=Daraan&layout=donut&langs_count=7&size_weight=0.05&count_weight=0.95
           path: profile/top-langs.svg
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Generate WakaTime
