@@ -28,7 +28,7 @@ jobs:
             themeParam: '&theme=default'
           - theme: "-dark"
             themeParam: '&theme=github_dark'
-          - theme: ''
+          - theme: "-default"
             themeParam: '&theme=transparent'      # good for dark and light
 
     steps:

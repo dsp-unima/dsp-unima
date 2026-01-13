@@ -25,7 +25,7 @@ Here are some ideas to get you started:
     srcset="./profile/stats-light.svg"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
-  <img src="./profile/stats.svg" />
+  <img src="./profile/stats-default.svg" />
 </picture>
 
 <picture>
@@ -37,7 +37,7 @@ Here are some ideas to get you started:
     srcset="./profile/top-langs-light.svg"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
-  <img src="./profile/top-langs.svg" />
+  <img src="./profile/top-langs-default.svg" />
 </picture>
 
 
