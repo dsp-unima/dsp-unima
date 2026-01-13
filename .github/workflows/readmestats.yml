@@ -26,11 +26,11 @@ jobs:
       matrix:
         include:
           - theme: light
-            themeParam: '&theme=light'
+            themeParam: '&theme=gruvbox_light'
           - theme: dark
-            themeParam: '&theme=dark'
+            themeParam: '&theme=github_dark'
           - theme: none
-            themeParam: ''      # no theme param for 'none'
+            themeParam: '&theme=transparent'      # no theme param for 'none'
 
     steps:
       - uses: actions/checkout@v6
