@@ -18,11 +18,11 @@ Here are some ideas to get you started:
 
 <picture>
   <source
-    srcset="./profile/stats.svg"
+    srcset="./profile/stats-dark.svg"
     media="(prefers-color-scheme: dark)"
   />
   <source
-    srcset="./profile/stats.svg"
+    srcset="./profile/stats-light.svg"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
   <img src="./profile/stats.svg" />
@@ -30,11 +30,11 @@ Here are some ideas to get you started:
 
 <picture>
   <source
-    srcset="./profile/top-langs.svg"
+    srcset="./profile/top-langs-dark.svg"
     media="(prefers-color-scheme: dark)"
   />
   <source
-    srcset="./profile/top-langs.svg"
+    srcset="./profile/top-langs-light.svg"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
   <img src="./profile/top-langs.svg" />
