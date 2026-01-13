@@ -26,7 +26,7 @@ jobs:
       matrix:
         include:
           - theme: light
-            themeParam: '&theme=omni'
+            themeParam: '&theme=default'
           - theme: dark
             themeParam: '&theme=github_dark'
           - theme: none
@@ -97,16 +97,39 @@ jobs:
         with:
           path: profile
 
-      - name: Show downloaded files
-        run: ls -la profile || true
+      - name: Flatten downloaded svgs into profile root
+        run: |
+          set -euo pipefail
+          # Ensure profile exists
+          mkdir -p profile
+          # Find all .svg files under profile (including nested artifact folders) and move them to profile root
+          # Use a loop to handle spaces in filenames safely
+          find profile -type f -name '*.svg' -print0 | while IFS= read -r -d '' file; do
+            base=$(basename "$file")
+            # Move file into profile root, overwrite if exists
+            mv -f "$file" "profile/$base"
+          done || true
+          # Remove now-empty nested directories (keep the profile root)
+          find profile -mindepth 2 -type d -empty -delete || true
+          echo "Flattened files:"
+          ls -la profile || true
+
+      - name: Ensure up-to-date with remote
+        run: |
+          # Fetch and reset to remote main to reduce chance of conflicts
+          git fetch origin main --quiet
+          git reset --hard origin/main || true
 
       - name: Commit cards
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # ensure we are up-to-date with remote to reduce chance of conflicts
-          git fetch origin main
-          git reset --hard origin/main || true
+          # Stage all SVGs in profile root
           git add profile/*.svg || true
-          git commit -m "Update README cards (generated)" || echo "No changes to commit"
-          git push
+          # Only commit if there are staged changes
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update README cards (generated)"
+            git push origin HEAD:main
+          fi
