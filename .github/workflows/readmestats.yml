@@ -10,6 +10,8 @@ on:
     paths:
       - '**.md'
       - '.github/workflows/readmestats.yml'
+      - '!*.svg'
+      - '!profile/*'
 
 jobs:
   build:
@@ -18,6 +20,18 @@ jobs:
     permissions:
       contents: write
 
+    strategy:
+      fail-fast: false
+      max-parallel: 1            # run themes sequentially to avoid concurrent pushes
+      matrix:
+        include:
+          - theme: light
+            themeParam: '&theme=light'
+          - theme: dark
+            themeParam: '&theme=dark'
+          - theme: none
+            themeParam: ''      # no theme param for 'none'
+
     steps:
       - uses: actions/checkout@v6
 
@@ -25,38 +39,32 @@ jobs:
         uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
         with:
           card: stats
-          options: username=Daraan&show_icons=true&hide_rank=false&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&rank_icon=percentile
-          path: profile/stats.svg
+          options: username=Daraan&show_icons=true&hide_rank=false&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&rank_icon=percentile${{ matrix.themeParam }}
+          path: profile/stats-${{ matrix.theme }}.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate top languages card
         uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
         with:
           card: top-langs
-          options: username=Daraan&layout=donut&exclude_repo=Daraan&langs_count=6&size_weight=0.00&count_weight=1.00
-          path: profile/top-langs.svg
+          options: username=Daraan&layout=donut&exclude_repo=Daraan&langs_count=6&size_weight=0.00&count_weight=1.00${{ matrix.themeParam }}
+          path: profile/top-langs-${{ matrix.theme }}.svg
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Generate WakaTime
-        if: false
-        uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
-        with:
-          card: wakatime
-          options: username=Daraan&layout=compact
-          path: profile/waka-time.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Generate Gist (time to next weekday)
         uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
         with:
           card: gist
-          path: profile/gist_time_to_next_weekday.svg
-          options: username=Daraan&id=61c45e7c0780930c588d80b85380a931
+          path: profile/gist_time_to_next_weekday-${{ matrix.theme }}.svg
+          options: username=Daraan&id=61c45e7c0780930c588d80b85380a931${{ matrix.themeParam }}
           token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Generate Gist Stats (Daterange)
         uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
         with:
           card: gist
-          path: profile/gist_daterange.svg
-          options: username=Daraan&id=5fab91ad430556161cf9a4a3ec8d40cb  
+          path: profile/gist_daterange-${{ matrix.theme }}.svg
+          options: username=Daraan&id=5fab91ad430556161cf9a4a3ec8d40cb${{ matrix.themeParam }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit cards
@@ -64,5 +72,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add profile/*.svg
-          git commit -m "Update README cards" || exit 0
+          git commit -m "Update README cards (theme: ${{ matrix.theme }})" || exit 0
           git push
