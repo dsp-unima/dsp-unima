@@ -48,7 +48,7 @@ jobs:
         continue-on-error: true
         with:
           card: top-langs
-          options: username=Daraan&layout=donut&exclude_repo=Daraan&langs_count=6&size_weight=1.00&count_weight=0.00${{ matrix.themeParam }}
+          options: username=Daraan&layout=donut&exclude_repo=Daraan&langs_count=7&size_weight=1.00&count_weight=0.00${{ matrix.themeParam }}&hide=jupyter%20notebook
           path: profile/top-langs-${{ matrix.theme }}.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
