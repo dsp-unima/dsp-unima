@@ -155,6 +155,10 @@ Here are some ideas to get you started:
   OWL
   ruff
   setuptools
+  Sphinx
+  WandB
+  Hydra
+  OmegaConf
 </div>
 
 ###
