@@ -151,6 +151,10 @@ Here are some ideas to get you started:
   JAX
   Scikit-Learn
   Ray
+  SPARQL
+  OWL
+  ruff
+  setuptools
 </div>
 
 ###
