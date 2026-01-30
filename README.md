@@ -149,6 +149,7 @@ Here are some ideas to get you started:
   <img width="12" />
   <img src="https://img.shields.io/badge/Amazon AWS-232F3E?logo=amazonwebservices&logoColor=FF9900&style=for-the-badge" height="40" alt="amazonwebservices logo"  />
   JAX
+  PyTorch Lightning
   Scikit-Learn
   Ray
   SPARQL
@@ -160,6 +161,8 @@ Here are some ideas to get you started:
   Hydra
   OmegaConf
   SLURM
+  SQLAlchemy
+  HuggingFace
 </div>
 
 ###
