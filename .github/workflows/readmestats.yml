@@ -54,11 +54,11 @@ jobs:
 
       - name: Generate Contributions
         uses: Daraan/github-readme-stats-action@ef0e0513a7551ce400bb3b5547084f49738ec70e
-        continue-on-error: false
+        continue-on-error: true
         with:
            card: prs
            options: username=Daraan${{ matrix.themeParam }}
-           path: profile/prs-${{ matrix.theme }}
+           path: profile/prs/${{ matrix.theme }}-
            token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate Gist (time to next weekday)
