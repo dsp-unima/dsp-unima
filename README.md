@@ -91,12 +91,6 @@ Here are some ideas to get you started:
 ###
 
 <div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="35" alt="java logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg" height="35" alt="networkx logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original.svg" height="35" alt="sqlalchemy logo"  />
-  <img width="12" />
   <img src="https://img.shields.io/badge/GNU Bash-4EAA25?logo=gnubash&logoColor=white&style=for-the-badge" height="40" alt="bash logo"  />
   <img width="12" />
   <img src="https://img.shields.io/badge/Blender-F5792A?logo=blender&logoColor=black&style=for-the-badge" height="40" alt="blender logo"  />
@@ -148,9 +142,17 @@ Here are some ideas to get you started:
   <img src="https://img.shields.io/badge/Slack-4A154B?logo=slack&logoColor=white&style=for-the-badge" height="40" alt="slack logo"  />
   <img width="12" />
   <img src="https://img.shields.io/badge/Amazon AWS-232F3E?logo=amazonwebservices&logoColor=FF9900&style=for-the-badge" height="40" alt="amazonwebservices aws logo"  />
+  <br>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="30" alt="java logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg" height="30" alt="networkx logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original.svg" height="30" alt="sqlalchemy logo"  />
+  <img width="12" />
   <img src="https://docs.jax.dev/en/latest/_static/jax_logo_250px.png" height="35" alt="jax logo"  />
-  <img src="https://www.tutorialspoint.com/pytorch-lightning/images/pytorch-lightning-mini-logo.jpg" height="35" alt="PyTorch Lightning logo"  />
+  <img src="https://www.tutorialspoint.com/pytorch-lightning/images/pytorch-lightning-mini-logo.jpg" height="30" alt="PyTorch Lightning logo"  />
   Scikit-Learn
+  <img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-without-subtitle.svg" height="30" alt="scikit-learn sklearn logo"  />
   Ray
   SPARQL
   OWL
