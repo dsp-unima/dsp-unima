@@ -215,5 +215,9 @@ Here are some ideas to get you started:
 <h2 class="text-lg font-semibold">Top Contributions</h2>
 
 <a target="_blank" href="https://github.com/search?q=owner%3Apython%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
-  <img style="width: 100%" src="https://raw.githubusercontent.com/dsp-unima/dsp-unima/refs/heads/main/profile/python-cpython.svg" alt="Python contributions"  />
+  <img style="width: 100%" src="https://raw.githubusercontent.com/dsp-unima/dsp-unima/refs/heads/main/profile/python-cpython.svg" height="42"  alt="Python contributions"  />
+</a>
+
+<a target="_blank" href="https://github.com/search?q=owner%3Acarla-simulator%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
+  <img style="width: 100%" src="https://raw.githubusercontent.com/dsp-unima/dsp-unima/refs/heads/main/profile/carla-simulator-carla.svg" height="42"  alt="Python contributions"  />
 </a>
