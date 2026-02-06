@@ -226,5 +226,19 @@ Here are some ideas to get you started:
 </picture>
 </a>
 
+<a target="_blank" href="https://github.com/search?q=owner%3Aray-project%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
+  <picture>
+  <source
+    srcset="./profile/profile-default/prs/dark-ray-project-ray.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="./profile/profile-light/prs/light-ray-project-ray.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="./profile/profile-default/prs/default-ray-project-ray.svg" height="96"  alt="ray contributions"  />
+</picture>
+</a>
+
 
 
