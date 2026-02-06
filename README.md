@@ -215,7 +215,7 @@ Here are some ideas to get you started:
 <a target="_blank" href="https://github.com/search?q=owner%3Acarla-simulator%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
   <picture>
   <source
-    srcset="./profile/profile-dark/prs/dark-carla-simulator-carla.svg"
+    srcset="./profile/profile-default/prs/default-carla-simulator-carla.svg"
     media="(prefers-color-scheme: dark)"
   />
   <source
