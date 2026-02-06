@@ -147,7 +147,8 @@ Here are some ideas to get you started:
   <img width="12" />
   <img src="https://img.shields.io/badge/Slack-4A154B?logo=slack&logoColor=white&style=for-the-badge" height="40" alt="slack logo"  />
   <img width="12" />
-  <img src="https://img.shields.io/badge/Amazon AWS-232F3E?logo=amazonwebservices&logoColor=FF9900&style=for-the-badge" height="40" alt="amazonwebservices logo"  />
+  <img src="https://img.shields.io/badge/Amazon AWS-232F3E?logo=amazonwebservices&logoColor=FF9900&style=for-the-badge" height="40" alt="amazonwebservices aws logo"  />
+  <img src="https://docs.jax.dev/en/latest/_static/jax_logo_250px.png" height="40" alt="jax logo"  />
   JAX
   PyTorch Lightning
   Scikit-Learn
