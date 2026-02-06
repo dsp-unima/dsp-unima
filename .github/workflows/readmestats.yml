@@ -84,7 +84,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: profile-${{ matrix.theme }}
-          path: profile/**/*-${{ matrix.theme }}*.svg
+          # Upload all generated SVGs (including those under subdirs like profile/prs/)
+          path: profile/**/*.svg
 
   commit:
     needs: build
@@ -116,24 +117,28 @@ jobs:
           set -euo pipefail
           mkdir -p profile
 
-          # When download-artifact extracts multiple artifacts it creates subfolders
-          # like profile/profile-light/*.svg, profile/profile-dark/*.svg. Find every .svg
-          # under profile and move it into profile root, overwriting any existing file
-          # with the same basename. Skip moving when the file is already in the root
-          # (to avoid 'are the same file' mv errors).
+          # Artifacts are extracted under profile/<artifact-name>/profile/...
+          # Move everything from profile/<artifact-name>/profile/... into profile/ preserving subpaths:
+          #   profile/profile-light/profile/prs/dark-wandb.svg -> profile/prs/dark-wandb.svg
           find profile -type f -name '*.svg' -print0 | while IFS= read -r -d '' file; do
-            base=$(basename "$file")
-            dir=$(dirname "$file")
-            dest="profile/$base"
-            if [ "$dir" = "profile" ]; then
+            # If the file is already directly under profile (no extra artifact layer), skip
+            if [ "$(dirname "$file")" = "profile" ]; then
               echo "Already in profile root, skipping move: $file"
-            else
-              # Move and overwrite any existing file with same basename
-              mv -f "$file" "$dest"
+              continue
             fi
+
+            # Strip the leading 'profile/<artifact>/' to get the intended relative path under profile
+            # e.g. file="profile/profile-light/profile/prs/dark-wandb.svg"
+            rel=${file#profile/*/}    # yields "profile/prs/dark-wandb.svg"
+            dest="$rel"              # we want to end up with "profile/prs/dark-wandb.svg"
+
+            dir=$(dirname "$dest")
+            mkdir -p "$dir"
+            # Move and overwrite any existing file with same path
+            mv -f "$file" "$dest"
           done
 
-          # Remove now-empty nested directories (leave profile/ root)
+          # Remove now-empty nested artifact directories (leave profile/ root)
           find profile -mindepth 2 -type d -empty -delete || true
 
           echo "Flattened files (profile root):"
