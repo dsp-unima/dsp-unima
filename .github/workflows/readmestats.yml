@@ -121,16 +121,18 @@ jobs:
           # Move everything from profile/<artifact-name>/profile/... into profile/ preserving subpaths:
           #   profile/profile-light/profile/prs/dark-wandb.svg -> profile/prs/dark-wandb.svg
           find profile -type f -name '*.svg' -print0 | while IFS= read -r -d '' file; do
-            # If the file is already directly under profile (no extra artifact layer), skip
-            if [ "$(dirname "$file")" = "profile" ]; then
-              echo "Already in profile root, skipping move: $file"
+            # Only handle files that come from an extracted artifact which contains a nested "profile/" layer:
+            # pattern: profile/<artifact>/profile/...
+            # If the file does NOT match that pattern it is already in the correct place under profile/
+            if [[ "$file" != profile/*/profile/* ]]; then
+              echo "Already in profile root (or not an artifact extraction), skipping move: $file"
               continue
             fi
 
             # Strip the leading 'profile/<artifact>/' to get the intended relative path under profile
-            # e.g. file="profile/profile-light/profile/prs/dark-wandb.svg"
-            rel=${file#profile/*/}    # yields "profile/prs/dark-wandb.svg"
-            dest="$rel"              # we want to end up with "profile/prs/dark-wandb.svg"
+            # e.g. file="profile/profile-light/profile/prs/dark-wandb.svg" -> rel="profile/prs/dark-wandb.svg"
+            rel=${file#profile/*/}
+            dest="$rel"
 
             dir=$(dirname "$dest")
             mkdir -p "$dir"
