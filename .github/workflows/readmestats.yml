@@ -39,7 +39,7 @@ jobs:
         continue-on-error: true
         with:
           card: stats
-          options: username=Daraan&show_icons=true&hide_rank=false&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&rank_icon=percentile${{ matrix.themeParam }}
+          options: username=Daraan&show_icons=true&hide_rank=false&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&rank_icon=github${{ matrix.themeParam }}
           path: profile/stats-${{ matrix.theme }}.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
