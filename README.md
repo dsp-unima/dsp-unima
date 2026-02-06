@@ -143,26 +143,25 @@ Here are some ideas to get you started:
   <img width="12" />
   <img src="https://img.shields.io/badge/Amazon AWS-232F3E?logo=amazonwebservices&logoColor=FF9900&style=for-the-badge" height="40" alt="amazonwebservices aws logo"  />
   <br>
+  
+  ---
+
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="30" alt="java logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg" height="30" alt="networkx logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original.svg" height="30" alt="sqlalchemy logo"  />
-  <img width="12" />
-  <img src="https://docs.jax.dev/en/latest/_static/jax_logo_250px.png" height="30" alt="jax logo"  />
-  <img src="https://www.tutorialspoint.com/pytorch-lightning/images/pytorch-lightning-mini-logo.jpg" height="30" alt="PyTorch Lightning logo"  />
   <img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-without-subtitle.svg" height="30" alt="scikit-learn sklearn logo"  />
   <img src="https://us1.discourse-cdn.com/flex020/uploads/ray/original/2X/6/65939671ef4ea5d70ba6030c01a1d308891c677f.png" height="30" alt="ray anyscale logo"  />
-  <img src="https://mimotext.github.io/MiMoTextBase_Tutorial/images/sparql.png" height="30" alt="SPARQL Wikidata logo"  />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Slurm_logo.svg/330px-Slurm_logo.svg.png" height="30" alt="slurm logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original.svg" height="30" alt="sqlalchemy logo"  />
+  <img src="https://docs.jax.dev/en/latest/_static/jax_logo_250px.png" height="30" alt="jax logo"  />
+  <img src="https://www.tutorialspoint.com/pytorch-lightning/images/pytorch-lightning-mini-logo.jpg" height="30" alt="PyTorch Lightning logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg" height="30" alt="networkx logo"  />
+  <img src="https://mimotext.github.io/MiMoTextBase_Tutorial/images/sparql.png" height="35" alt="SPARQL Wikidata logo"  />
   <img src="https://repository-images.githubusercontent.com/756706541/35aad446-e22c-445c-9c3a-3ed2099797f3" height="30" alt="OWL logo"  />
   <img src="https://astralwp.wpengine.com/wp-content/uploads/2023/03/Ruff-Logo.svg" height="30" alt="ruff logo"  />
-  <img src="https://pre-commit.com/logo.svg" height="30" alt="pre-commit logo"  />
+  <img src="https://pre-commit.com/logo.svg" height="32" alt="pre-commit logo"  />
   <img src="https://www.sphinx-doc.org/en/master/_static/sphinx-logo.svg" height="30" alt="sphinx logo"  />
   setuptools
-  <img src="https://site.wandb.ai/wp-content/uploads/2023/05/wb-cw.svg" height="30" alt="weights & biases wandb logo"  />
-  <img src="https://hydra.cc/img/logo.svg" height="30" alt="hydra logo"  />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Slurm_logo.svg/330px-Slurm_logo.svg.png" height="30" alt="slurm logo"  />
-  OmegaConf
+  <img src="https://www.pngitem.com/pimgs/m/379-3795922_wandb-logo-circle-hd-png-download.png" height="30" alt="weights & biases wandb logo"  />
+  <img src="https://raw.githubusercontent.com/facebookresearch/hydra/main/website/static/img/Hydra-Readme-logo2.svg" height="30" alt="hydra logo"  />
 </div>
 
 ###
