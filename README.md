@@ -213,36 +213,25 @@ Here are some ideas to get you started:
 
 
 
-      <div class="grid grid-cols-1 gap-4">
-        
-          <h2 class="text-lg font-semibold">Top Contributions</h2>
-          
-            <a href="https://github.com/python/cpython/pulls?q=author%3ADaraan+is%3Amerged+" class="flex items-center gap-3 rounded-xl pr-2 bg-card/50 border border-border/50 hover:border-border transition-all group" rel="noopener" target="_blank">
+<div class="grid grid-cols-1 gap-4">
+<h2 class="text-lg font-semibold">Top Contributions</h2>
+            <a href="https://github.com/pulls?q=is%3Apr%20author%3ADaraan%20archived%3Afalse%20is%3Amerged%20org%3Apython%20" class="flex items-center gap-3 rounded-xl pr-2 bg-card/50 border border-border/50 hover:border-border transition-all group" rel="noopener" target="_blank">
               <img src="https://avatars.githubusercontent.com/u/1525981?v=4" class="h-12 w-12 rounded-xl rounded-r-none  transition-all" alt="Python">
               <div class="w-full flex flex-col text-xs font-medium gap-0.5">
                 <span class="flex items-start justify-between gap-5">
                   <span class="font-display">
                     Python
                   </span>
-                  
                     <div class="relative inline-flex px-0 py-0 rounded-md border-transparent bg-transparent text-foreground transition-all items-center font-medium saturate-0 text-[11px] border group-hover:saturate-100">
-  
-  
     <div class="relative mr-1 rounded-sm shrink-0 overflow-hidden w-4 h-4">
-  
       <img id="avatar-image-GJGm1XfGUIGFjWki" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="bg-transparent aspect-square w-full h-full" phx-hook="AvatarImage">
       <span class="flex rounded-full items-center justify-center w-full h-full">
-  
         P
-      
 </span>
     
 </div>
-  
   <span class="line-clamp-1">Python</span>
-
 </div>
-                  
                 </span>
                 <div class="flex items-center gap-2 font-semibold">
                   <span class="flex items-center text-amber-300 text-xs">
