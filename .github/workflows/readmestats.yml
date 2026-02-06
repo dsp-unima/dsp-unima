@@ -52,6 +52,15 @@ jobs:
           path: profile/top-langs-${{ matrix.theme }}.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Generate Contributions
+        uses: Daraan/github-readme-stats-action@9ffcec5e64a222de78628557a2099093f4234d12
+        continue-on-error: false
+        with:
+           card: prs
+           options: username=Daraan${{ matrix.themeParam }}
+           path: profile/pr-contributions-${{ matrix.theme }}.svg
+           token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Generate Gist (time to next weekday)
         uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
         continue-on-error: true
