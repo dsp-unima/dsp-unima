@@ -18,32 +18,28 @@ Here are some ideas to get you started:
 
 <picture>
   <source
-    srcset="./profile/stats-dark.svg"
+    srcset="./profile/profile-dark/stats-dark.svg"
     media="(prefers-color-scheme: dark)"
   />
   <source
-    srcset="./profile/stats-light.svg"
+    srcset="./profile/profile-light/stats-light.svg"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
-  <img src="./profile/stats-default.svg" />
+  <img src="./profile/profile-default/stats-default.svg" />
 </picture>
 
 <picture>
   <source
-    srcset="./profile/top-langs-dark.svg"
+    srcset="./profile/profile-dark/top-langs-dark.svg"
     media="(prefers-color-scheme: dark)"
   />
   <source
-    srcset="./profile/top-langs-light.svg"
+    srcset="./profile/profile-light/top-langs-light.svg"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
-  <img src="./profile/top-langs-default.svg" />
+  <img src="./profile/profile-default/top-langs-default.svg" />
 </picture>
 
-
-
-![Stats](./profile/stats.svg)
-![Top Languages](./profile/top-langs.svg)
 ![Gist Daterange](./profile/gist_daterange.svg)
 ![Gist Time to next Weekday](./profile/gist_time_to_next_weekday.svg)
 
@@ -52,19 +48,7 @@ Here are some ideas to get you started:
 </div>
 
 
----
-
-<a href="https://github.com/Daraan">
-  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=Daraan" />
-</a>
-<a href="https://github.com/Daraan">
-  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=Daraan&layout=compact&langs_count=8&card_width=320" />
-</a>
-
-
 ###
-
-
 
 <div align="center">
   <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"  />
@@ -215,9 +199,32 @@ Here are some ideas to get you started:
 <h2 class="text-lg font-semibold">Top Contributions</h2>
 
 <a target="_blank" href="https://github.com/search?q=owner%3Apython%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
-  <img style="width: 100%" src="https://raw.githubusercontent.com/dsp-unima/dsp-unima/refs/heads/main/profile/python-cpython.svg" height="96"  alt="Python contributions"  />
+  <picture>
+  <source
+    srcset="./profile/profile-dark/prs/dark-python-cpython.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="./profile/profile-light/prs/light-python-cpython.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="./profile/profile-default/prs/default-python-cpython.svg" height="96"  alt="Python contributions"  />
+</picture>
 </a>
 
 <a target="_blank" href="https://github.com/search?q=owner%3Acarla-simulator%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
-  <img style="width: 100%" src="https://raw.githubusercontent.com/dsp-unima/dsp-unima/refs/heads/main/profile/carla-simulator-carla.svg" height="96"  alt="Python contributions"  />
+  <picture>
+  <source
+    srcset="./profile/profile-dark/prs/dark-carla-simulator-carla.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="./profile/profile-light/prs/light-carla-simulator-carla.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="./profile/profile-default/prs/default-carla-simulator-carla.svg" height="96"  alt="CARLA contributions"  />
+</picture>
 </a>
+
+
+
