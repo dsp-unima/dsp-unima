@@ -54,7 +54,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate Contributions
-        uses: Daraan/github-readme-stats-action@a2b26a08cdd55f0d70e319e6007488c5522418db
+        uses: Daraan/github-readme-stats-action@ac7ed2473c598744c8f9a4eb30fc81a679244b27
         continue-on-error: true
         with:
            card: prs
