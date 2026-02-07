@@ -84,8 +84,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: profile-${{ matrix.theme }}
-          # Upload all generated SVGs (including those under subdirs like profile/prs/)
-          path: profile/**/*.svg
+          # Upload files from the profile/ directory, preserving structure
+          path: profile/
 
   commit:
     needs: build
@@ -107,46 +107,53 @@ jobs:
           git fetch origin main --quiet
           git reset --hard origin/main || true
 
+      # Clean out the profile directory to prevent nesting issues
+      - name: Clean profile directory
+        run: |
+          set -euo pipefail
+          rm -rf profile
+          mkdir -p profile
+
       - name: Download all generated artifacts
         uses: actions/download-artifact@v4
         with:
-          path: profile
+          # Download to a temporary directory to avoid conflicts
+          path: artifacts-temp
 
-      - name: Flatten downloaded svgs into profile root and overwrite existing files
+      - name: Move downloaded svgs into profile maintaining structure
         run: |
           set -euo pipefail
-          mkdir -p profile
-
-          # Artifacts are extracted under profile/<artifact-name>/profile/...
-          # Move everything from profile/<artifact-name>/profile/... into profile/ preserving subpaths:
-          #   profile/profile-light/profile/prs/dark-wandb.svg -> profile/prs/dark-wandb.svg
-          find profile -type f -name '*.svg' -print0 | while IFS= read -r -d '' file; do
-            # Only handle files that come from an extracted artifact which contains a nested "profile/" layer:
-            # pattern: profile/<artifact>/profile/...
-            # If the file does NOT match that pattern it is already in the correct place under profile/
-            if [[ "$file" != profile/*/profile/* ]]; then
-              echo "Already in profile root (or not an artifact extraction), skipping move: $file"
-              continue
-            fi
-
-            # Strip the leading 'profile/<artifact>/' to get the intended relative path under profile
-            # e.g. file="profile/profile-light/profile/prs/dark-wandb.svg" -> rel="profile/prs/dark-wandb.svg"
-            rel=${file#profile/*/}
-            dest="$rel"
-
+          
+          # Artifacts are extracted under artifacts-temp/<artifact-name>/profile/...
+          # We need to move everything from artifacts-temp/*/profile/ into profile/
+          
+          find artifacts-temp -type f -name '*.svg' -print0 | while IFS= read -r -d '' file; do
+            echo "Processing: $file"
+            
+            # Extract the path after the artifact name directory
+            # e.g., artifacts-temp/profile-light/profile/prs/dark-wandb.svg
+            # We want to extract: profile/prs/dark-wandb.svg
+            
+            # Remove the artifacts-temp/<artifact-name>/ prefix
+            rel_path=$(echo "$file" | sed 's|artifacts-temp/[^/]*/||')
+            
+            dest="$rel_path"
             dir=$(dirname "$dest")
+            
             mkdir -p "$dir"
-            # Move and overwrite any existing file with same path
-            mv -f "$file" "$dest"
+            # Copy (not move) to handle potential duplicates from different matrix runs
+            # Last one wins (overwrites)
+            cp -f "$file" "$dest"
+            echo "  -> $dest"
           done
 
-          # Remove now-empty nested artifact directories (leave profile/ root)
-          find profile -mindepth 2 -type d -empty -delete || true
+          # Clean up temp directory
+          rm -rf artifacts-temp
 
-          echo "Flattened files (profile root):"
-          ls -la profile || true
+          echo "Final profile structure:"
+          find profile -type f -name '*.svg' | sort
 
-      - name: Stage and commit only actual changes (overwrite tracked files)
+      - name: Stage and commit only actual changes
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
