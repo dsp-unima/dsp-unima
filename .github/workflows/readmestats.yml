@@ -108,13 +108,6 @@ jobs:
           git fetch origin main --quiet
           git reset --hard origin/main || true
 
-      # Clean out the profile directory to prevent nesting issues
-      - name: Clean profile directory
-        run: |
-          set -euo pipefail
-          rm -rf profile
-          mkdir -p profile
-
       - name: Download all generated artifacts
         uses: actions/download-artifact@v4
         with:
