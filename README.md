@@ -201,44 +201,77 @@ Here are some ideas to get you started:
 <a target="_blank" href="https://github.com/search?q=owner%3Apython%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
   <picture>
   <source
-    srcset="./profile/profile-dark/prs/dark-python-cpython.svg"
+    srcset="./profile/prs/dark-python-cpython.svg"
     media="(prefers-color-scheme: dark)"
   />
   <source
-    srcset="./profile/profile-light/prs/light-python-cpython.svg"
+    srcset="./profile/prs/light-python-cpython.svg"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
-  <img src="./profile/profile-default/prs/default-python-cpython.svg" height="96"  alt="Python contributions"  />
-</picture>
-</a>
-
+  <img src="./profile/prs/default-python-cpython.svg" height="96"  alt="Python contributions"  />
+</picture></a>
 <a target="_blank" href="https://github.com/search?q=owner%3Acarla-simulator%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
   <picture>
   <source
-    srcset="./profile/profile-default/prs/default-carla-simulator-carla.svg"
+    srcset="./profile/prs/dark-carla-simulator-carla.svg"
     media="(prefers-color-scheme: dark)"
   />
   <source
-    srcset="./profile/profile-light/prs/light-carla-simulator-carla.svg"
+    srcset="./profile/prs/light-carla-simulator-carla.svg"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
-  <img src="./profile/profile-default/prs/default-carla-simulator-carla.svg" height="96"  alt="CARLA contributions"  />
-</picture>
-</a>
+  <img src="./profile/prs/default-carla-simulator-carla.svg" height="96"  alt="CARLA contributions"  />
+</picture></a>
 
 <a target="_blank" href="https://github.com/search?q=owner%3Aray-project%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
   <picture>
   <source
-    srcset="./profile/profile-default/prs/dark-ray-project-ray.svg"
+    srcset="./profile/prs/dark-ray-project-ray.svg"
     media="(prefers-color-scheme: dark)"
   />
   <source
-    srcset="./profile/profile-light/prs/light-ray-project-ray.svg"
+    srcset="./profile/prs/light-ray-project-ray.svg"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
-  <img src="./profile/profile-default/prs/default-ray-project-ray.svg" height="96"  alt="ray contributions"  />
-</picture>
-</a>
+  <img src="./profile/prs/default-ray-project-ray.svg" height="96"  alt="ray contributions"  />
+</picture></a>
+<a target="_blank" href="https://github.com/search?q=owner%3Aswansonk14%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
+  <picture>
+  <source
+    srcset="./profile/prs/dark-swansonk14-typed-argument-parser.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="./profile/prs/light-swansonk14-typed-argument-parser.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="./profile/prs/default-swansonk14-typed-argument-parser.svg" height="96"  alt="ray contributions"  />
+</picture></a>
 
+
+<a target="_blank" href="https://github.com/search?q=owner%3AFarama-Foundation%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
+  <picture>
+  <source
+    srcset="./profile/prs/dark-Farama-Foundation-Gymnasium.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="./profile/prs/light-Farama-Foundation-Gymnasium.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="./profile/prs/default-Farama-Foundation-Gymnasium.svg" height="96"  alt="ray contributions"  />
+</picture></a>
+<a target="_blank" href="https://github.com/search?q=owner%3Aswansonk14%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
+  <picture>
+  <source
+    srcset="./profile/prs/dark-swansonk14-typed-argument-parser.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="./profile/prs/light-swansonk14-typed-argument-parser.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="./profile/prs/default-swansonk14-typed-argument-parser.svg" height="96"  alt="ray contributions"  />
+</picture></a>
 
 
