@@ -15,29 +15,27 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-
 <picture>
   <source
-    srcset="./profile/profile-dark/stats-dark.svg"
+    srcset="./profile/stats-dark.svg"
     media="(prefers-color-scheme: dark)"
   />
   <source
-    srcset="./profile/profile-light/stats-light.svg"
+    srcset="./profile/stats-light.svg"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
-  <img src="./profile/profile-default/stats-default.svg" />
+  <img height=290 align="center" src="./profile/stats-default.svg" />
 </picture>
-
 <picture>
   <source
-    srcset="./profile/profile-dark/top-langs-dark.svg"
+    srcset="./profile/top-langs-dark.svg"
     media="(prefers-color-scheme: dark)"
   />
   <source
-    srcset="./profile/profile-light/top-langs-light.svg"
+    srcset="./profile/top-langs-light.svg"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
-  <img src="./profile/profile-default/top-langs-default.svg" />
+  <img height=200 align="center" src="./profile/top-langs-default.svg" />
 </picture>
 
 ![Gist Daterange](./profile/gist_daterange.svg)
@@ -208,7 +206,7 @@ Here are some ideas to get you started:
     srcset="./profile/prs/light-python-cpython.svg"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
-  <img src="./profile/prs/default-python-cpython.svg" height="96"  alt="Python contributions"  />
+  <img src="./profile/prs/default-python-cpython.svg" height="84"  alt="Python contributions"  />
 </picture></a>
 <a target="_blank" href="https://github.com/search?q=owner%3Acarla-simulator%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
   <picture>
@@ -220,7 +218,7 @@ Here are some ideas to get you started:
     srcset="./profile/prs/light-carla-simulator-carla.svg"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
-  <img src="./profile/prs/default-carla-simulator-carla.svg" height="96"  alt="CARLA contributions"  />
+  <img src="./profile/prs/default-carla-simulator-carla.svg" height="84"  alt="CARLA contributions"  />
 </picture></a>
 
 <a target="_blank" href="https://github.com/search?q=owner%3Aray-project%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
@@ -233,7 +231,7 @@ Here are some ideas to get you started:
     srcset="./profile/prs/light-ray-project-ray.svg"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
-  <img src="./profile/prs/default-ray-project-ray.svg" height="96"  alt="ray contributions"  />
+  <img src="./profile/prs/default-ray-project-ray.svg" height="84"  alt="ray contributions"  />
 </picture></a>
 <a target="_blank" href="https://github.com/search?q=owner%3Aswansonk14%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
   <picture>
@@ -245,9 +243,35 @@ Here are some ideas to get you started:
     srcset="./profile/prs/light-swansonk14-typed-argument-parser.svg"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
-  <img src="./profile/prs/default-swansonk14-typed-argument-parser.svg" height="96"  alt="ray contributions"  />
+  <img src="./profile/prs/default-swansonk14-typed-argument-parser.svg" height="84"  alt="typed argument parser tap contributions"  />
 </picture></a>
 
+
+<a target="_blank" href="https://github.com/search?q=owner%3ALucasAlegre%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
+  <picture>
+  <source
+    srcset="./profile/prs/dark-LucasAlegre-sumo-rl.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="./profile/prs/light-LucasAlegre-sumo-rl.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="./profile/prs/default-LucasAlegre-sumo-rl.svg" height="84"  alt="SUMO RL contributions"  />
+</picture></a>
+
+<a target="_blank" href="https://github.com/search?q=owner%3ACORE-Robotics-Lab%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
+  <picture>
+  <source
+    srcset="./profile/prs/profile/prs/dark-CORE-Robotics-Lab-Interpretable_DDTS_AISTATS2020.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="./profile/prs/light-CORE-Robotics-Lab-Interpretable_DDTS_AISTATS2020.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="./profile/prs/default-CORE-Robotics-Lab-Interpretable_DDTS_AISTATS2020.svg" height="84"  alt="CORE Robotics Lab DDT contributions"  />
+</picture></a>
 
 <a target="_blank" href="https://github.com/search?q=owner%3AFarama-Foundation%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
   <picture>
@@ -259,19 +283,94 @@ Here are some ideas to get you started:
     srcset="./profile/prs/light-Farama-Foundation-Gymnasium.svg"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
-  <img src="./profile/prs/default-Farama-Foundation-Gymnasium.svg" height="96"  alt="ray contributions"  />
+  <img src="./profile/prs/default-Farama-Foundation-Gymnasium.svg" height="84"  alt="farama gymnasium contributions"  />
 </picture></a>
-<a target="_blank" href="https://github.com/search?q=owner%3Aswansonk14%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
+<a target="_blank" href="https://github.com/search?q=owner%3Alanpa%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
   <picture>
   <source
-    srcset="./profile/prs/dark-swansonk14-typed-argument-parser.svg"
+    srcset="./profile/prs/dark-lanpa-tensorboardX.svg"
     media="(prefers-color-scheme: dark)"
   />
   <source
-    srcset="./profile/prs/light-swansonk14-typed-argument-parser.svg"
+    srcset="./profile/prs/light-lanpa-tensorboardX.svg"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
-  <img src="./profile/prs/default-swansonk14-typed-argument-parser.svg" height="96"  alt="ray contributions"  />
+  <img src="./profile/prs/default-lanpa-tensorboardX.svg" height="84"  alt="tensorboardX contributions"  />
 </picture></a>
 
+<a target="_blank" href="https://github.com/search?q=owner%3Awandb%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
+  <picture>
+  <source
+    srcset="./profile/prs/dark-wandb-wandb.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="./profile/prs/light-wandb-wandb.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="./profile/prs/default-wandb-wandb.svg" height="84"  alt="wandb contributions"  />
+</picture></a>
+<a target="_blank" href="https://github.com/search?q=owner%3Apydantic%20author%3ADaraan%20is%3Amerged&type=pullrequests&s=comments&o=desc">
+  <picture>
+  <source
+    srcset="./profile/prs/dark-pydantic-pydantic.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="./profile/prs/light-pydantic-pydantic.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="./profile/prs/default-pydantic-pydantic.svg" height="84"  alt="pydantic contributions"  />
+</picture></a>
 
+---
+
+<a target="_blank" href="https://github.com/Daraan/CropAndWeedDetection">
+  <picture>
+  <source
+    srcset="./profile/prs/dark-own-Daraan-CropAndWeedDetection.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="./profile/prs/light-own-Daraan-CropAndWeedDetection.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="./profile/prs/default-own-Daraan-CropAndWeedDetection.svg" height="84"  alt="Crop and Weed Detection contributions"  />
+</picture></a>
+<a target="_blank" href="https://github.com/Daraan/Dark-Squirrel-Scripts">
+  <picture>
+  <source
+    srcset="./profile/prs/dark-own-Daraan-Dark-Squirrel-Scripts.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="./profile/prs/light-own-Daraan-Dark-Squirrel-Scripts.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="./profile/prs/default-own-Daraan-Dark-Squirrel-Scripts.svg"" height="84"  alt="Dark Squirrel Script Dark Project contributions"  />
+</picture></a>
+<a target="_blank" href="https://github.com/Daraan/KnowledgeGraphTransformer">
+  <picture>
+  <source
+    srcset="./profile/prs/dark-own-Daraan-KnowledgeGraphTransformer.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="./profile/prs/light-own-Daraan-KnowledgeGraphTransformer.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="./profile/prs/default-own-Daraan-KnowledgeGraphTransformer.svg"" height="84"  alt="Knowledge Graph Transformer contributions"  />
+</picture></a>
+
+<a target="_blank" href="https://github.com/Daraan/ray_utilities">
+  <picture>
+  <source
+    srcset="./profile/prs/dark-own-Daraan-ray_utilities.svg"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="./profile/prs/light-own-Daraan-ray_utilities.svg"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="./profile/prs/default-own-Daraan-ray_utilities.svg"" height="84"  alt="ray utilities contributions"  />
+</picture></a>
