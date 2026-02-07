@@ -34,13 +34,14 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      # Generate to a temp directory first, NOT directly to profile/
       - name: Generate stats card
         uses: Daraan/github-readme-stats-action@2009edc011f4764bf09d2044726613ef1d4cfb00
         continue-on-error: true
         with:
           card: stats
           options: username=Daraan&show_icons=true&hide_rank=false&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&rank_icon=profile${{ matrix.themeParam }}
-          path: profile/stats-${{ matrix.theme }}.svg
+          path: generated/stats-${{ matrix.theme }}.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate top languages card
@@ -49,7 +50,7 @@ jobs:
         with:
           card: top-langs
           options: username=Daraan&layout=donut&exclude_repo=Daraan&langs_count=5&size_weight=1.00&count_weight=0.00${{ matrix.themeParam }}&hide=jupyter%20notebook
-          path: profile/top-langs-${{ matrix.theme }}.svg
+          path: generated/top-langs-${{ matrix.theme }}.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate Contributions
@@ -58,7 +59,7 @@ jobs:
         with:
            card: prs
            options: username=Daraan${{ matrix.themeParam }}
-           path: profile/prs/${{ matrix.theme }}-
+           path: generated/prs/${{ matrix.theme }}-
            token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate Gist (time to next weekday)
@@ -66,7 +67,7 @@ jobs:
         continue-on-error: true
         with:
           card: gist
-          path: profile/gist_time_to_next_weekday-${{ matrix.theme }}.svg
+          path: generated/gist_time_to_next_weekday-${{ matrix.theme }}.svg
           options: username=Daraan&id=61c45e7c0780930c588d80b85380a931${{ matrix.themeParam }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -75,7 +76,7 @@ jobs:
         continue-on-error: true
         with:
           card: gist
-          path: profile/gist_daterange-${{ matrix.theme }}.svg
+          path: generated/gist_daterange-${{ matrix.theme }}.svg
           options: username=Daraan&id=5fab91ad430556161cf9a4a3ec8d40cb${{ matrix.themeParam }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -84,8 +85,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: profile-${{ matrix.theme }}
-          # Upload files from the profile/ directory, preserving structure
-          path: profile/
+          # Upload ONLY newly generated files from the generated/ directory
+          path: generated/
 
   commit:
     needs: build
@@ -107,42 +108,38 @@ jobs:
           git fetch origin main --quiet
           git reset --hard origin/main || true
 
-      # Clean out the profile directory to prevent nesting issues
-      - name: Clean profile directory
-        run: |
-          set -euo pipefail
-          rm -rf profile
-          mkdir -p profile
-
       - name: Download all generated artifacts
         uses: actions/download-artifact@v4
         with:
-          # Download to a temporary directory to avoid conflicts
+          # Download to a temporary directory
           path: artifacts-temp
 
-      - name: Move downloaded svgs into profile maintaining structure
+      - name: Move downloaded svgs into profile directory
         run: |
           set -euo pipefail
           
-          # Artifacts are extracted under artifacts-temp/<artifact-name>/profile/...
-          # We need to move everything from artifacts-temp/*/profile/ into profile/
+          mkdir -p profile
           
+          # Artifacts are extracted under artifacts-temp/<artifact-name>/...
+          # Since we generated to generated/ directory, structure is:
+          # artifacts-temp/profile-light/stats-light.svg
+          # artifacts-temp/profile-light/prs/light-something.svg
+          # etc.
+          
+          # Move all SVG files from artifacts-temp to profile/
           find artifacts-temp -type f -name '*.svg' -print0 | while IFS= read -r -d '' file; do
             echo "Processing: $file"
             
-            # Extract the path after the artifact name directory
-            # e.g., artifacts-temp/profile-light/profile/prs/dark-wandb.svg
-            # We want to extract: profile/prs/dark-wandb.svg
-            
-            # Remove the artifacts-temp/<artifact-name>/ prefix
+            # Extract the relative path after the artifact name
+            # e.g., artifacts-temp/profile-light/stats-light.svg -> stats-light.svg
+            #       artifacts-temp/profile-dark/prs/dark-wandb.svg -> prs/dark-wandb.svg
             rel_path=$(echo "$file" | sed 's|artifacts-temp/[^/]*/||')
             
-            dest="$rel_path"
+            dest="profile/$rel_path"
             dir=$(dirname "$dest")
             
             mkdir -p "$dir"
-            # Copy (not move) to handle potential duplicates from different matrix runs
-            # Last one wins (overwrites)
+            # Copy to destination (overwrite if exists)
             cp -f "$file" "$dest"
             echo "  -> $dest"
           done
@@ -150,6 +147,7 @@ jobs:
           # Clean up temp directory
           rm -rf artifacts-temp
 
+          echo ""
           echo "Final profile structure:"
           find profile -type f -name '*.svg' | sort
 
