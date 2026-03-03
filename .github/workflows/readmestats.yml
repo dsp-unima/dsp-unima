@@ -36,7 +36,7 @@ jobs:
 
       # Generate to a temp directory first, NOT directly to profile/
       - name: Generate stats card
-        uses: Daraan/github-readme-stats-action@2009edc011f4764bf09d2044726613ef1d4cfb00
+        uses: Daraan/pr-stats-action@2009edc011f4764bf09d2044726613ef1d4cfb00
         continue-on-error: true
         with:
           card: stats
@@ -54,13 +54,14 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate Contributions
-        uses: Daraan/github-readme-stats-action@standalone
+        uses: Daraan/pr-stats-action@copilot/add-includes-option-and-counter-update
         continue-on-error: true
         with:
            username: Daraan
            options: ${{ matrix.themeParam }}
            path: generated/prs/${{ matrix.theme }}-
            token: ${{ secrets.GITHUB_TOKEN }}
+           includes: "Daraan/pr-stats-action"
            custom_images: |
              swansonk14/typed-argument-parser: https://github.com/swansonk14/typed-argument-parser/blob/main/images/tap_logo.png?raw=true
              sumo-rl: https://github.com/LucasAlegre/sumo-rl/blob/main/docs/_static/logo.png
