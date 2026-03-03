@@ -54,7 +54,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate Contributions
-        uses: Daraan/pr-stats-action@copilot/add-includes-option-and-counter-update
+        uses: Daraan/pr-stats-action@v1.1
         continue-on-error: true
         with:
            username: Daraan
