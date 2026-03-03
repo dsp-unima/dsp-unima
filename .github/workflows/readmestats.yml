@@ -54,13 +54,15 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate Contributions
-        uses: Daraan/github-readme-stats-action@e31d91616a932691ba81ece433ee3ed958a0fae0
+        uses: Daraan/github-readme-stats-action@custom-images
         continue-on-error: true
         with:
            card: prs
            options: username=Daraan${{ matrix.themeParam }}
            path: generated/prs/${{ matrix.theme }}-
            token: ${{ secrets.GITHUB_TOKEN }}
+           custom_images: |
+             swansonk14/typed-argument-parser: https://github.com/swansonk14/typed-argument-parser/blob/main/images/tap_logo.png
 
       - name: Generate Gist (time to next weekday)
         uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
