@@ -347,7 +347,7 @@ Here are some ideas to get you started:
 
 
 <br>
-<p align="center"><b>PR cards created dynamically with: <a target="_blank" href="https://github.com/Daraan/pr-stats-action">pr-stats-action</a></b></p>
+<p align="center"><b>PR cards created dynamically with: <a target="_blank" href="https://github.com/Daraan/pr-stats-action">pr-stats-action</a>:</b>
 
 <a target="_blank" href="https://github.com/Daraan/ray_utilities">
   <picture>
@@ -361,6 +361,7 @@ Here are some ideas to get you started:
   />
   <img src="./profile/prs/default-own-Daraan-pr-stats-action.svg"" height="84" align="center" alt="PR cards creator"  />
 </picture></a>
+</p>
 
 </picture></a>
 
