@@ -347,7 +347,7 @@ Here are some ideas to get you started:
 
 
 <br>
-<p style="text-align:center;">PR cards created dynamically with: <a target="_blank" href="https://github.com/Daraan/pr-stats-action">pr-stats-action</a></p>
+<p align="center"><b>PR cards created dynamically with: <a target="_blank" href="https://github.com/Daraan/pr-stats-action">pr-stats-action</a></b></p>
 
 <a target="_blank" href="https://github.com/Daraan/ray_utilities">
   <picture>
