@@ -63,6 +63,7 @@ jobs:
            token: ${{ secrets.GITHUB_TOKEN }}
            custom_images: |
              swansonk14/typed-argument-parser: https://github.com/swansonk14/typed-argument-parser/blob/main/images/tap_logo.png?raw=true
+             sumo-rl: https://github.com/LucasAlegre/sumo-rl/blob/main/docs/_static/logo.png
 
       - name: Generate Gist (time to next weekday)
         uses: readme-tools/github-readme-stats-action@699af1ef2dba605a3600fad2a6575e9f81b37cb8
