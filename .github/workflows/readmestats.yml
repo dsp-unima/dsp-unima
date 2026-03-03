@@ -54,7 +54,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate Contributions
-        uses: Daraan/github-readme-stats-action@8e8acab6c1eeab2ab3f7d8119908926c3eb984d8
+        uses: Daraan/github-readme-stats-action@74c95064d04658e82ccb24efce0d3c3a0c187a84
         continue-on-error: true
         with:
            options: username=Daraan${{ matrix.themeParam }}
