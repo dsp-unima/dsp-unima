@@ -54,11 +54,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate Contributions
-        uses: Daraan/github-readme-stats-action@custom-images
+        uses: Daraan/github-readme-stats-action@standalone
         continue-on-error: true
         with:
-           card: prs
-           options: username=Daraan${{ matrix.themeParam }}
+           username: Daraan
+           options: ${{ matrix.themeParam }}
            path: generated/prs/${{ matrix.theme }}-
            token: ${{ secrets.GITHUB_TOKEN }}
            custom_images: |
