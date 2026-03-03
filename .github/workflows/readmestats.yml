@@ -58,7 +58,7 @@ jobs:
         continue-on-error: true
         with:
            username: Daraan
-           options: username=Daraan${{ matrix.themeParam }}
+           options: ${{ matrix.themeParam }}
            path: generated/prs/${{ matrix.theme }}-
            token: ${{ secrets.GITHUB_TOKEN }}
            custom_images: |
