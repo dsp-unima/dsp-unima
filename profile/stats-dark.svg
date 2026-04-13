@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">Daniel Sperber's GitHub Stats, Rank: A-</title>
-        <desc id="descId">Total Stars Earned: 53, Total Commits  (last year) : 467, Total PRs: 180, Total PRs Merged: 136, Merged PRs Percentage: 75.56, Total PRs Reviewed: 30, Total Issues: 134, Total Discussions Started: 6, Total Discussions Answered: 4, Contributed to (last year): 24</desc>
+        <desc id="descId">Total Stars Earned: 53, Total Commits  (last year) : 459, Total PRs: 180, Total PRs Merged: 136, Merged PRs Percentage: 75.56, Total PRs Reviewed: 30, Total Issues: 134, Total Discussions Started: 6, Total Discussions Answered: 4, Contributed to (last year): 24</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 69.47100502856408;
+        stroke-dashoffset: 69.72837945951193;
       }
     }
   
@@ -175,7 +175,7 @@
         x="219.01"
         y="12.5"
         data-testid="commits"
-      >467</text>
+      >459</text>
     </g>
   </g><g transform="translate(0, 50)">
     <g class="stagger" style="animation-delay: 750ms" transform="translate(25, 0)">
