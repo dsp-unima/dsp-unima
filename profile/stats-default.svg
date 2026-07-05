@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">Daniel Sperber's GitHub Stats, Rank: A-</title>
-        <desc id="descId">Total Stars Earned: 54, Total Commits  (last year) : 420, Total PRs: 181, Total PRs Merged: 136, Merged PRs Percentage: 75.14, Total PRs Reviewed: 27, Total Issues: 134, Total Discussions Started: 6, Total Discussions Answered: 4, Contributed to (last year): 16</desc>
+        <desc id="descId">Total Stars Earned: 54, Total Commits  (last year) : 420, Total PRs: 181, Total PRs Merged: 136, Merged PRs Percentage: 75.14, Total PRs Reviewed: 27, Total Issues: 134, Total Discussions Started: 6, Total Discussions Answered: 4, Contributed to (last year): 15</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -295,7 +295,7 @@
         x="219.01"
         y="12.5"
         data-testid="contribs"
-      >16</text>
+      >15</text>
     </g>
   </g>
     </svg>
